@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for the MWAN3 MultiWAN Manager
-LUCI_DEPENDS:=+luci-base +mwan3
+LUCI_DEPENDS:=+luci-base +mwan3-nft
 PKG_LICENSE:=GPL-2.0
 PKG_SRC_PREFIX:=$(shell date +%y).999
 PKG_SRC_SUFFIX:=3.6.12
@@ -15,6 +15,6 @@ PKG_RELEASE:=1
 
 PKG_MAINTAINER:=Florian Eckert <fe@dev.tdt.de>
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
